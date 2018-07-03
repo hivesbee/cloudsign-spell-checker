@@ -6,69 +6,73 @@
   <title>Spell Checker</title>
   <meta charset="utf-8">
   <meta name="description" content="">
-  <meta name="risacan" content="SmartHR Spell Checker">
+  <meta name="risacan" content="CloudSign Spell Checker">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,900" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
   <link rel="icon" href="favicon.ico">
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84656331-1"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-49612594-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'UA-84656331-1');
+    gtag('config', 'UA-49612594-1');
   </script>
-
 </head>
 
 <body>
-  <canvas id="confetti" width="1" height="1" class="hide"></canvas>
-  <div>
-    <div class="emoji" id="emoji">TYPE 👇</div>
-    <input id="answer" type="text" />
-  </div>
-  <footer class="hide" id="credit">
-    📃 by
-    <a href="https://github.com/risacan/smarthr-spell-checker">risacan</a>
-    <br /> 🎉 by
-    <a href="https://codepen.io/iprodev/pen/azpWBr">https://codepen.io/iprodev/pen/azpWBr</a>
-  </footer>
-  <script>
-    var answerObj = document.getElementById("answer");
-    var emoji = document.getElementById("emoji");
-    var canvas = document.getElementById("confetti");
-    var link = document.getElementById("credit");
-    function checkSpell() {
-      var answer = answerObj.value
-      switch (answer) {
-        case "":
-          emoji.textContent = "TYPE 👇"
-          break;
-        case "smartHR":
-        case "SMARTHR":
-        case "Smart HR":
-          emoji.textContent = "😡"
-          break;
-        case "SmartHR":
-          emoji.textContent = "🎉"
-          canvas.classList.remove("hide")
-          credit.classList.remove("hide")
-          break;
-        default:
-          emoji.textContent = "🤔"
-          canvas.classList.add("hide")
-          credit.classList.add("hide")
-          break;
-      }
+<canvas id="confetti" width="1" height="1" class="hide"></canvas>
+<div>
+  <div class="emoji" id="emoji">TYPE 👇</div>
+  <input id="answer" type="text" />
+</div>
+<footer class="hide" id="credit">
+  🔧 by
+  <a href="https://github.com/hivesbee/cloudsign-spell-checker/">hivesbee</a>
+  <br /> 📃 by
+  <a href="https://github.com/risacan/smarthr-spell-checker/">https://github.com/risacan/smarthr-spell-checker/</a>
+  <br /> 🎉 by
+  <a href="https://codepen.io/iprodev/pen/azpWBr">https://codepen.io/iprodev/pen/azpWBr</a>
+</footer>
+<script>
+  var answerObj = document.getElementById("answer");
+  var emoji = document.getElementById("emoji");
+  var canvas = document.getElementById("confetti");
+  var link = document.getElementById("credit");
+  function checkSpell() {
+    var answer = answerObj.value
+    switch (answer) {
+      case "":
+        emoji.textContent = "TYPE 👇"
+        break;
+      case "cloud sign":
+      case "cloudsign":
+      case "cloudsing":
+      case "Cloudsing":
+      case "CloudSing":
+        emoji.textContent = "😡"
+        break;
+      case "CloudSign":
+      case "クラウドサイン":
+        emoji.textContent = "🎉"
+        canvas.classList.remove("hide")
+        credit.classList.remove("hide")
+        break;
+      default:
+        emoji.textContent = "🤔"
+        canvas.classList.add("hide")
+        credit.classList.add("hide")
+        break;
     }
-    answerObj.addEventListener("input", checkSpell);
-    window.onload = function () {
-      answerObj.focus()
-    }
-  </script>
-  <script type="text/javascript" src="./index.js"></script>
+  }
+  answerObj.addEventListener("input", checkSpell);
+  window.onload = function () {
+    answerObj.focus()
+  }
+</script>
+<script type="text/javascript" src="./index.js"></script>
 
 </body>
 
